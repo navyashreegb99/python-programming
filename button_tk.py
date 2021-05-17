@@ -1,35 +1,28 @@
 
 
 from tkinter import *
+from tkinter.ttk import *
 
-
-root = Tk()			
-
+root = Tk()
 
 root.geometry('100x100')
 
+style = Style()
 
-btn = Button(root, text = 'Click me !', bd = '5',
-						command = root.destroy)
+style.configure('W.TButton', font =
+			('calibri', 10, 'bold', 'underline'),
+				foreground = 'red')
 
 
-btn.pack(side = 'top')
+btn1 = Button(root, text = 'Quit !',
+				style = 'W.TButton',
+			command = root.destroy)
+btn1.grid(row = 0, column = 3, padx = 100)
+
+
+
+btn2 = Button(root, text = 'Click me !', command = None)
+btn2.grid(row = 1, column = 3, pady = 10, padx = 100)
+
 
 root.mainloop()
-
-
-from tkinter.ttk import *
- 
-
-root1 = Tk()
- 
-          
-root1.geometry('100x100')    
- 
-btn = Button(root1, text = 'Click me !',
-                command = root.destroy)
- 
-
-btn.pack(side = 'top')    
- 
-root1.mainloop()
