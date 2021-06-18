@@ -1,0 +1,35 @@
+1.python --version
+
+2.pip --version
+
+3.django-admin --version
+
+4.For installing virtual env wrapper
+pip install virtualenvwrapper-win
+
+5.To create virtual env test
+mkvirtualenv test 
+
+6.To install Django inside test env
+pip install django
+
+7.crete project folder
+mkdir python-Django
+
+8.crete project
+django-admin startproject web_project
+
+9.To run server
+python manage.py runserver
+
+10. open project folder in vs code
+PS C:\Users\U6059922\python practice\python-Django\web_project> test\Scripts\activate
+(test) PS C:\Users\U6059922\python practice\python-Django\web_project> python manage.py startapp calc
+
+place test env inside web_project
+move to test envirnoment 
+build project inside it called calc
+
+11.
+
+
