@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { CalculatorRequestModel } from './calculator_request';
+
+import  {FormControl, FormGroup, Validators } from '@angular/forms';
+import { CalculatorService } from '../calculator.service';
+import { CalculatorResponseModel } from './calculator_response';
 
 @Component({
   selector: 'app-calculator',
@@ -6,10 +11,61 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./calculator.component.css']
 })
 export class CalculatorComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+  calcRequestModel: CalculatorRequestModel ;
+  calcResponseModel: CalculatorResponseModel ;
+  calcForm: FormGroup;
+  constructor(private calcService : CalculatorService) { 
+    this.calcRequestModel = {
+      firstNumber:0,
+      secondNumber:0,
+    
+      
+      }
   }
 
+  ngOnInit(): void {
+    this.calcForm = new FormGroup({
+      firstNumber: new FormControl(''),
+      secondNumber: new FormControl(''),
+ 
+    });
+    
+  }
+
+ add()
+ {
+  this.calcRequestModel.firstNumber = this.calcForm.get('firstNumber').value;
+  this.calcRequestModel.secondNumber = this.calcForm.get('secondNumber').value;
+  this.calcService.getSum( this.calcRequestModel).subscribe(data =>{
+    this.calcResponseModel=data;
+
+  });
+
+ }
+
+ sub(){
+  this.calcRequestModel.firstNumber = this.calcForm.get('firstNumber').value;
+  this.calcRequestModel.secondNumber = this.calcForm.get('secondNumber').value;
+  this.calcService.getSub( this.calcRequestModel).subscribe(data =>{
+    this.calcResponseModel=data;
+
+  });
+ }
+
+ mul(){
+  this.calcRequestModel.firstNumber = this.calcForm.get('firstNumber').value;
+  this.calcRequestModel.secondNumber = this.calcForm.get('secondNumber').value;
+  this.calcService.getProd( this.calcRequestModel).subscribe(data =>{
+    this.calcResponseModel=data;
+
+  });
+ }
+ div(){
+  this.calcRequestModel.firstNumber = this.calcForm.get('firstNumber').value;
+  this.calcRequestModel.secondNumber = this.calcForm.get('secondNumber').value;
+  this.calcService.getDiv( this.calcRequestModel).subscribe(data =>{
+    this.calcResponseModel=data;
+
+  });
+ }
 }

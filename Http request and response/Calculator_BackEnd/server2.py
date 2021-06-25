@@ -1,4 +1,4 @@
-''''
+
 from http.server import HTTPServer, BaseHTTPRequestHandler
 import json
 #{"1": "First", "2": "Second", "3": "Third", "4": "Fourth"}
@@ -42,4 +42,3 @@ def main():
 
 if __name__=='__main__':
     main()
-	'''
