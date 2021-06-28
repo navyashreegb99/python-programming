@@ -10,19 +10,21 @@ export class CalculatorService {
 
   constructor(private http: HttpClient) { }
 
-  getSum(calculatorRequestModel: CalculatorRequestModel):  Observable<any> {
-    return this.http.get<CalculatorResponseModel>('http://localhost:8080/add' +calculatorRequestModel );
+  postSum(calculatorRequestModel: CalculatorRequestModel):  Observable<any> {
+    return this.http.post<CalculatorResponseModel>('http://localhost:8080/add' ,calculatorRequestModel );
   }
 
-  getSub(calculatorRequestModel: CalculatorRequestModel):  Observable<any> {
-    return this.http.get<CalculatorResponseModel>('http://localhost:8080/sub' +calculatorRequestModel );
+  postSub(calculatorRequestModel: CalculatorRequestModel):  Observable<any> {
+    return this.http.post<CalculatorResponseModel>('http://localhost:8080/sub' ,calculatorRequestModel );
   }
 
-  getProd(calculatorRequestModel: CalculatorRequestModel):  Observable<any> {
-    return this.http.get<CalculatorResponseModel>('http://localhost:8080/mul' +calculatorRequestModel );
+  postProd(calculatorRequestModel: CalculatorRequestModel):  Observable<any> {
+    return this.http.post<CalculatorResponseModel>('http://localhost:8080/mul',calculatorRequestModel );
   }
 
-  getDiv(calculatorRequestModel: CalculatorRequestModel):  Observable<any> {
-    return this.http.get<CalculatorResponseModel>('http://localhost:8080/div' +calculatorRequestModel );
+  postDiv(calculatorRequestModel: CalculatorRequestModel):  Observable<any> {
+    return this.http.post<CalculatorResponseModel>('http://localhost:8080/div',calculatorRequestModel );
   }
+
+  
 }

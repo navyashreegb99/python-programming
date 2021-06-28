@@ -36,7 +36,8 @@ export class CalculatorComponent implements OnInit {
  {
   this.calcRequestModel.firstNumber = this.calcForm.get('firstNumber').value;
   this.calcRequestModel.secondNumber = this.calcForm.get('secondNumber').value;
-  this.calcService.getSum( this.calcRequestModel).subscribe(data =>{
+  this.calcService.postSum( this.calcRequestModel).subscribe(data =>{
+    console.log(data);
     this.calcResponseModel=data;
 
   });
@@ -46,7 +47,7 @@ export class CalculatorComponent implements OnInit {
  sub(){
   this.calcRequestModel.firstNumber = this.calcForm.get('firstNumber').value;
   this.calcRequestModel.secondNumber = this.calcForm.get('secondNumber').value;
-  this.calcService.getSub( this.calcRequestModel).subscribe(data =>{
+  this.calcService.postSub( this.calcRequestModel).subscribe(data =>{
     this.calcResponseModel=data;
 
   });
@@ -55,7 +56,7 @@ export class CalculatorComponent implements OnInit {
  mul(){
   this.calcRequestModel.firstNumber = this.calcForm.get('firstNumber').value;
   this.calcRequestModel.secondNumber = this.calcForm.get('secondNumber').value;
-  this.calcService.getProd( this.calcRequestModel).subscribe(data =>{
+  this.calcService.postProd( this.calcRequestModel).subscribe(data =>{
     this.calcResponseModel=data;
 
   });
@@ -63,7 +64,7 @@ export class CalculatorComponent implements OnInit {
  div(){
   this.calcRequestModel.firstNumber = this.calcForm.get('firstNumber').value;
   this.calcRequestModel.secondNumber = this.calcForm.get('secondNumber').value;
-  this.calcService.getDiv( this.calcRequestModel).subscribe(data =>{
+  this.calcService.postDiv( this.calcRequestModel).subscribe(data =>{
     this.calcResponseModel=data;
 
   });
