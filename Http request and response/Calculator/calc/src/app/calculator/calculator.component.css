@@ -1,0 +1,75 @@
+
+.number{
+    margin-top: 40px;
+    margin-left: 50px;
+}
+
+textarea.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+.create-topic-container {
+    margin-top: 15px;
+  --post-line-color: rgba(41, 13, 13, 0.164);
+  border: 1px solid rgba(224, 214, 214, 0);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  margin-left: 100px;
+  background-color:#f1efef;
+  color:black;
+  position: relative;
+  border-radius: 4px;
+  padding: 5px;
+  height: 300px;
+  width: 400px;
+  }
+  
+  .create-topic-heading {
+    font-size: 30px;
+  font-weight: 500;
+  line-height: 22px;
+  color:indigo;;
+  -ms-flex: 1;
+  flex: 1;
+  margin-left: 100px;
+  margin-top: 10px;
+  }
+  
+ 
+  .btn-btn-primary {
+    background-color:white;
+    border-color:white;
+    color: indigo;
+    fill:white;
+    border: 1px solid;
+    border-radius: 4px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    line-height: 24px;
+    text-transform: uppercase;
+    padding: 3px 16px;
+    opacity: 1;
+    width: 80px;
+    height: 34px;
+  }
+  
+  .container{
+   
+    margin-top: 60px;
+    width: 300px;
+    height:100px;
+    
+  }
+  .result{
+      margin-left:20px;
+  }
+  
+  
+  ::placeholder {
+    
+    font-size:15px;
+  }
