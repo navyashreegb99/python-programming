@@ -14,9 +14,6 @@ class ServiceHandler(BaseHTTPRequestHandler):
 		self.send_header("Access-Control-Allow-Headers", "X-Requested-With")
 		self.send_header("Access-Control-Allow-Headers", "Content-Type")
 		self.end_headers()
-	
-	def do_GET(self):
-		self.processRequest()
 
 	def _set_headers(self):
 		self.send_response(200)
@@ -24,6 +21,10 @@ class ServiceHandler(BaseHTTPRequestHandler):
 		self.send_header("Content-type", "text/json")
 		self.end_headers()
     
+	def common(self):
+		if self.path.endswith(''):
+			
+
 	def do_POST(self):
 		if self.path.endswith('/add'):
 			content_length = int(self.headers['Content-Length']) 
