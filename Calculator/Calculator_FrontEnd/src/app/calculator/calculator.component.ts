@@ -4,6 +4,7 @@ import { CalculatorRequestModel } from './calculator_request';
 import  {FormControl, FormGroup, Validators } from '@angular/forms';
 import { CalculatorService } from '../calculator.service';
 import { CalculatorResponseModel } from './calculator_response';
+import { NotificationService } from '../notification.service';
 
 @Component({
   selector: 'app-calculator',
@@ -16,7 +17,7 @@ export class CalculatorComponent implements OnInit {
   calcForm: FormGroup;
   result:number;
   
-  constructor(private calcService : CalculatorService) { 
+  constructor(private calcService : CalculatorService,private notifyService:NotificationService) { 
     this.calcRequestModel = {
       firstNumber:0,
       secondNumber:0,
@@ -27,8 +28,8 @@ export class CalculatorComponent implements OnInit {
 
   ngOnInit(): void {
     this.calcForm = new FormGroup({
-      firstNumber: new FormControl(''),
-      secondNumber: new FormControl(''),
+      firstNumber:  new FormControl('', Validators.required),
+      secondNumber: new FormControl('', Validators.required),
  
     });
     
@@ -41,6 +42,7 @@ export class CalculatorComponent implements OnInit {
   this.calcService.postSum( this.calcRequestModel).subscribe(data =>{
     this.calcResponseModel=data;
     this.result=this.calcResponseModel.result;
+    
   });
 
  }

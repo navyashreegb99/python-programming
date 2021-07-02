@@ -8,9 +8,9 @@ import { SharedService } from 'src/app/shared.service';
 })
 export class ShowDepComponent implements OnInit {
 
-  DepartmentList!: any[];
+  DepartmentList: any=[];
   ModalTitle!: string;
-  ActivateAddEditDepComp!: boolean;
+  ActivateAddEditDepComp: boolean=false;
   dep:any;
 
   constructor(private service:SharedService) { }
@@ -32,6 +32,13 @@ export class ShowDepComponent implements OnInit {
     this.ActivateAddEditDepComp=false;
     this.refreshDepList();
   }
+
+  editClick(item:any){
+    this.dep=item;
+    this.ModalTitle="Edit Department";
+    this.ActivateAddEditDepComp=true;
+  }
+
 
   refreshDepList(){
     this.service.getDepartmentList().subscribe(data=>{
