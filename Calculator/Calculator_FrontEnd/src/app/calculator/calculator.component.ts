@@ -39,6 +39,7 @@ export class CalculatorComponent implements OnInit {
  {
   this.calcRequestModel.firstNumber = this.calcForm.get('firstNumber').value;
   this.calcRequestModel.secondNumber = this.calcForm.get('secondNumber').value;
+  
   this.calcService.postSum( this.calcRequestModel).subscribe(data =>{
     this.calcResponseModel=data;
     this.result=this.calcResponseModel.result;
