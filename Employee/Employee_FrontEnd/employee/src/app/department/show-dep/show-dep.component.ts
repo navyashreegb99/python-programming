@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SharedService } from 'src/app/shared.service';
+import {SharedService} from 'src/app/shared.service';
 
 @Component({
   selector: 'app-show-dep',
@@ -8,12 +8,17 @@ import { SharedService } from 'src/app/shared.service';
 })
 export class ShowDepComponent implements OnInit {
 
-  DepartmentList: any=[];
-  ModalTitle!: string;
-  ActivateAddEditDepComp: boolean=false;
+  constructor(private service:SharedService) { }
+
+  DepartmentList:any=[];
+
+  ModalTitle:string | undefined;
+  ActivateAddEditDepComp:boolean=false;
   dep:any;
 
-  constructor(private service:SharedService) { }
+  DepartmentIdFilter:string="";
+  DepartmentNameFilter:string="";
+  DepartmentListWithoutFilter:any=[];
 
   ngOnInit(): void {
     this.refreshDepList();
@@ -26,24 +31,13 @@ export class ShowDepComponent implements OnInit {
     }
     this.ModalTitle="Add Department";
     this.ActivateAddEditDepComp=true;
-  }
 
-  closeClick(){
-    this.ActivateAddEditDepComp=false;
-    this.refreshDepList();
   }
 
   editClick(item:any){
     this.dep=item;
     this.ModalTitle="Edit Department";
     this.ActivateAddEditDepComp=true;
-  }
-
-
-  refreshDepList(){
-    this.service.getDepartmentList().subscribe(data=>{
-     this.DepartmentList=data;
-    });
   }
 
   deleteClick(item:any){
@@ -54,4 +48,19 @@ export class ShowDepComponent implements OnInit {
       })
     }
   }
+
+  closeClick(){
+    this.ActivateAddEditDepComp=false;
+    this.refreshDepList();
+  }
+
+
+  refreshDepList(){
+    this.service.getDepartmentList().subscribe(data=>{
+      this.DepartmentList=data;
+      this.DepartmentListWithoutFilter=data;
+    });
+  }
+
+
 }

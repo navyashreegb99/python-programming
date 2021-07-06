@@ -45,8 +45,8 @@ export class SharedService {
     return this.http.delete(this.APIUrl+'/employee/'+val);
   }
 
-  updatePhoto(val:any){
-    return this.http.post(this.APIUrl+'/SaveFile/',val);
+  UploadPhoto(val:any){
+    return this.http.post(this.APIUrl+'/SaveFile',val);
   }
 
   getAllDepartmentNames():Observable<any[]>{

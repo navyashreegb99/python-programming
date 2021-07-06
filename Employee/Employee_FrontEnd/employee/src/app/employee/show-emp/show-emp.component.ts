@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Input,Output} from '@angular/core';
 import {SharedService} from 'src/app/shared.service';
 
 @Component({
