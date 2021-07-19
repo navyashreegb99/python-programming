@@ -1,39 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-test',
-  template: `
-  <h2>
-    Welcome {{name}}
-  </h2>
-  <h2 [style.color]="hasError? 'red' : 'green' ">Style Binding </h2>
-  <h2 [ngStyle]="titleStyles"> Style binding2</h2>
-  <h2 [style.color]="highlightColor"> Style binding 3</h2>
-  <button (click)="onClick()"> Greet </button>
-  {{greeting}}
+  selector: '[app-test]',
+  template: `<h1>{{name}}</h1>
+  <h2>{{2+5}}</h2>
+  <h2>{{"Welcome "+ name}}</h2>
+  <h2>{{name.length}}</h2>
+  <h2>{{name.toLowerCase()}}</h2>
+  <h2>{{greetUser()}}</h2>
+  <h2>{{greetUser()}}</h2>
+  <h2>{{siteUrl}}</h2>
 
   `,
-  styleUrls: ['./test.component.css']
+  styles: [`
+  h1{
+    color:blue;
+  }`]
 })
 export class TestComponent implements OnInit {
 
-  public name="navya";
-  public hasError=true;
-  public isSpecial=true;
-  public highlightColor="orange";
-  public titleStyles={
-    color:"blue",
-    fontStyle:"italic"
-  };
-  public greeting="";
-
+ public name="NAVYASHREE";
+ public siteUrl=window.location.href;
   constructor() { } 
 
   ngOnInit(): void {
   }
 
-  onClick(){
-    this.greeting="you clicked on button";
+  greetUser(){
+    return "Hello "+this.name;
   }
 
 }
