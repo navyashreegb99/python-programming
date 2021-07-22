@@ -1,0 +1,59 @@
+body{
+    background-image: url("pikachoo.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.myclass{
+    font-weight: bolder;
+    font-size: xx-large;
+}
+p{
+ font-family: 'Courier New', Courier, monospace;
+ font-size: 20px;
+ font-style: oblique;
+ font-weight: 1000;
+ text-align: center;
+ color: green;
+ letter-spacing: 10px;
+ word-spacing: 50px;
+ line-height: 2;
+}
+a:link{
+color: hotpink;
+}
+a:hover{
+    color: indigo;
+}
+a:active{
+    color:grey;
+}
+a:visited{
+    color:khaki
+}
+h2{
+    border-style: solid;
+    border-color: olivedrab;
+    border-width: 10px;
+    border-left-color:yellow ;
+}
+h1{
+    border: 10px solid black;
+}
+span{
+font-family:'Times New Roman', Times, serif;
+color: blueviolet;
+font-size:xx-large;
+}
+div h1{
+    color: rgb(224, 213, 49);
+}
+#myname{
+    color: crimson;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: xx-large;
+}
+.relpos{
+    position: relative;
+    top: 100px;
+    left: 100px;
+}
