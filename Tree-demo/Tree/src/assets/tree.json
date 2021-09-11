@@ -1,0 +1,30 @@
+[
+    {
+      "name": "Insights Platform",
+      "children": [
+        {
+          "name": "CA",
+          "children": [
+            {"name": "Siddharth"},
+            {"name": "Priya"}
+          ]
+        },
+        {
+          "name": "CD",
+          "children": [
+            {"name": "Sreedhar"},
+            {"name": "Ramesh"}
+          ]
+        },
+        {
+          "name": "Devops",
+          "children": [
+            {"name": "Navya"},
+            {"name": "Anjali"},
+            {"name": "Pavan"}
+          ]
+        }
+      ]
+    }
+    
+  ]

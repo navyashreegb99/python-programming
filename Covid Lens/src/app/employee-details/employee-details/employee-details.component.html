@@ -1,0 +1,81 @@
+
+<div class="container" style="padding-top: 20px;display:flex; margin-left: 180px;">
+  <div style="font-size: 10px;
+  color: #fff;
+  height: 35px;
+  line-height: 40px;
+  background:purple;
+  border-radius: 35px;
+  text-align: center;
+  width: 40px;" ><i class="fa fa-table fa-lg" aria-hidden="true" style ="font-size:20px" >  </i></div>
+<div style ="font-weight: 900 ;font-size:20px;  padding-top:8px;padding-left:10px;color:purple ">COVID DATA ANALYSER</div>
+
+</div>
+
+<div style ="padding-top: 10px;  margin-left: 200px;" >
+  <h4 style="color: brown">{{teamsLocs.teamName}}</h4>
+<ag-grid-angular
+style="width: 65%; height:340px"
+class="ag-theme-alpine"
+[rowData]="datasource"
+[columnDefs]="columnDefs">
+</ag-grid-angular>
+
+</div>
+
+<!-- <div style ="font-weight: 900 ;font-size:20px; padding-left:10px; padding-top:8px;color:rgb(27, 26, 27)">tean name</div> -->
+<div style ="padding-top: 10px;  margin-left: 200px;" >
+  
+    <table style="width:70% ">
+        <tr style="color:white;  background-color:rgb(68, 64, 64)" >
+          <th>% Dose one</th>
+          <th>% Dose Two</th>
+          <th>% Willing to Come</th>
+          <th>Conclusion</th>
+        </tr>
+        <tr *ngIf="colorVarTeam"  style="font-weight:bold;color: green">
+          
+          <td>{{per_dos1|number : '.2-2'}}</td>
+          <td>{{per_dos2|number : '.2-2'}}</td>
+          <td>{{per_willing|number : '.2-2'}}</td>
+          <td  >{{summary}}</td>
+        </tr>
+        <tr *ngIf="!colorVarTeam"  style="font-weight:bold;color: red">
+          
+          <td>{{per_dos1|number : '.2-2'}}</td>
+          <td>{{per_dos2|number : '.2-2'}}</td>
+          <td>{{per_willing|number : '.2-2'}}</td>
+          <td  >{{summary}}</td>
+        </tr>
+    </table>
+</div>
+
+<!-- <div style ="font-weight: 900 ;font-size:20px; padding-left:10px; padding-top:8px;color:rgb(27, 26, 27)">location</div> -->
+
+<div style ="padding-top: 10px;  margin-left: 200px;" >
+  <h4 style="color: brown">{{teamsLocs.location}}</h4>
+  <table style="width:70% ">
+      <tr style="color:white;  background-color:rgb(68, 64, 64)" >
+        <th>% Dose one</th>
+        <th>% Dose Two</th>
+        <th>% Test Positivity</th>
+        <th>Conclusion</th>
+      </tr>
+      <tr *ngIf="colorVarCity"  style="font-weight:bold;color: green">
+        <td>{{city_dose1|number : '.2-2'}}</td>
+        <td>{{city_dose2|number : '.2-2'}}</td>
+        <td>{{test_pos|number : '.2-2'}}</td>
+        <td>{{test_summary}}</td>
+      </tr>
+      <tr *ngIf="!colorVarCity"  style="font-weight:bold;color: red">
+        <td>{{city_dose1|number : '.2-2'}}</td>
+        <td>{{city_dose2|number : '.2-2'}}</td>
+        <td>{{test_pos|number : '.2-2'}}</td>
+        <td>{{test_summary}}</td>
+      </tr>
+  </table>
+</div>
+
+
+
+    

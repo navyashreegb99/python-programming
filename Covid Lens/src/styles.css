@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'ag-grid-community/dist/styles/ag-grid.css';
+@import "../node_modules/ag-grid-community/dist/styles/ag-theme-alpine.css";
+
+
+    body { 
+        background: url("/assets/Background2.jpg") no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        margin-top: 63px;
+        margin-bottom: 50px;
+        height: 100%; 
+      }    
+
+
+.ag-header-cell{
+    background-color:rgb(68, 64, 64);
+    width: 200px;
+    color:white
+}
+.ag-icon {
+   
+    color: white;
+}
+
+.ag-header-cell-label {
+    color:white;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: 'Times New Roman';
+    
+
+}
+
+.ag-row-hover {
+    /* putting in !important so it overrides the theme's styling as it hovers the row also */
+    background-color:rgb(236, 205, 229)!important;
+  }
+  

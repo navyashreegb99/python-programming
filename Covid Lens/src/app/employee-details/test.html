@@ -1,0 +1,38 @@
+
+<div class="container" style="padding-top: 20px;"><i class="fa fa-table" aria-hidden="true" style ="font-weight: 900 ;font-size:20px;color:purple">  COVID DATA ANALYSER</i>
+ 
+</div>
+
+
+<div style ="padding-top: 10px;  margin-left: 200px;" >
+  <h4 style="color: brown">{{teamsLocs.teamName}}</h4>
+ <ag-grid-angular
+style="width: 68%; height:340px"
+class="ag-theme-alpine"
+[rowData]="datasource"
+[columnDefs]="columnDefs">
+</ag-grid-angular> 
+
+</div>
+
+<div style ="padding-top: 10px;  margin-left: 200px;margin-top: 20px;">
+ <h4 style="color: brown">{{teamsLocs.location}}</h4>
+    <table style="width:68% ">
+        <tr style="color:white;  background-color:rgb(68, 64, 64)" >
+          <th>% Dose one</th>
+          <th>% Dose Two</th>
+          <th>% Willing to Come</th>
+          <th>Conclusion</th>
+        </tr>
+        <tr style="font-weight:bold">
+          <td>{{per_dos1 }}</td>
+          <td>{{per_dos2}}</td>
+          <td>{{per_willing }}</td>
+          <td>{{summary}}</td>
+        </tr>
+    </table>
+</div>
+
+
+
+    

@@ -1,0 +1,59 @@
+
+
+<div class="container" *ngIf="country">
+  <h2 style="color: purple">Country</h2>
+    <div class="row" >
+      <div class="col-sm-4"  *ngFor="let country of countries">
+            <div class="card" >
+                
+                   <!-- <h5 class="card-title">{{country}} </h5> -->
+                  
+                   <Button class="btn btn-secondary" (click)="city()" [disabled]="false"   *ngIf="country==='India'" style="font-weight: 500;font-size: 20px;"  >{{country}}</Button>
+
+                    <Button class="btn btn-secondary" (click)="city()" [disabled]="true"   *ngIf="country!='India'" style="font-weight: 500;font-size: 20px;" >{{country}} </Button>
+                 </div>
+               </div>
+              
+  </div>
+  <div class="navBtns">
+    <Button id="navbtn" class="btn btn-secondary" (click)="nextTown()"  style="float: right;">next</Button>
+  </div>
+</div>
+
+<div class="container" *ngIf="Town">
+  <h2 style="color: purple">Location</h2>
+    <div class="row"  >
+        <div class="col-sm-4" *ngFor="let lc of locs!.location">
+          
+          <div class="card" >
+                  
+                   <Button class="btn btn-secondary" (click)="team($event)" value="{{lc}}" style="font-weight: 500;font-size: 20px;">{{lc}}</Button>
+                 </div>
+               </div>
+         </div>
+ 
+    <div class="navBtns">
+      <Button id="navbtn" class="btn btn-secondary" (click)="previousCountry()" >previous</Button>
+      <Button id="navbtn" class="btn btn-secondary" (click)="nextTeam()" style="float: right;">Next</Button>
+    </div>
+</div>
+
+<div class="container" *ngIf="Team">
+  <h2 style="color: purple">Team</h2>
+  <div class="row"  >
+      <div class="col-sm-4" *ngFor="let team of teams!.teamName">
+          <div class="card" >
+              
+             
+                 <Button class="btn btn-secondary" (click)='TeamLocation($event)' value='{{team}}'  style="font-weight: 500;font-size: 20px;">{{team}}</Button>
+               </div>
+            
+       </div>
+  </div>
+  <div class="navBtns">
+    <Button id="navbtn" class="btn btn-secondary" (click)="previousTown()" >previous</Button>
+  </div>
+</div>
+
+
+
