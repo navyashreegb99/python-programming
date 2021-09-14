@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { TreeModule } from '@circlon/angular-tree-component';
 import { TreePracticeComponent } from './tree-practice/tree-practice.component';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +18,7 @@ import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
     BrowserModule,
     AppRoutingModule,
     TreeModule,
+    HttpClientModule,
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

@@ -1,0 +1,34 @@
+[
+    {
+      "name": "Insights Platform",
+      "text":"Welcome to Insights Platform!!",
+      "children": [
+        {
+          "name": "CA",
+          "text":"Welcome to Insights Platform-CA!!",
+          "children": [
+            {"name": "Siddharth", "text":"Hello Siddharth"},
+            {"name": "Priya", "text":"Hello Siddharth"}
+          ]
+        },
+        {
+          "name": "CD",
+          "text":"Welcome to Insights Platform-CD!!",
+          "children": [
+            {"name": "Sreedhar", "text":"Hello Sreedhar"},
+            {"name": "Ramesh", "text":"Hello Ramesh"}
+          ]
+        },
+        {
+          "name": "IP- Database",
+          "text":"Welcome to Insights Platform-Database team!!",
+          "children": [
+            {"name": "Navya", "text":"Hello Navya"},
+            {"name": "Anjali", "text":"Hello Anjali"},
+            {"name": "Pavan", "text":"Hello Pavan"}
+          ]
+        }
+      ]
+    }
+    
+  ]
