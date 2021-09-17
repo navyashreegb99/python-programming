@@ -1,0 +1,25 @@
+<div style ="padding-top: 10px;  margin-left: 200px;" >
+    <h4 style="color: brown">List of objects</h4>
+   <div *ngFor="let Object of Objects">
+       <input type="radio" name="ListofObjects" value="{{Object}}" (change)="download($event)"><label>{{Object}}</label>
+   </div>
+   <button type="button" class="btn btn-success" (click)="getPresignedUrl()">Get Presigned Url</button>
+
+  </div>
+  
+<div class="text-center">
+	<input class="form-control" type="file"
+			(change)="onChange($event)">
+
+	<button (click)="onUpload()"
+		class="btn btn-success">
+		Upload
+	</button>
+</div>
+
+<!--Flag variable is used here-->
+<div class="container" *ngIf="loading">
+	<h3>Loading ...</h3>
+</div>
+
+
