@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FileUploaderService } from '../file-uploader.service';
 import AWS from 'aws-sdk';
-import { Console } from 'console';
+
 @Component({
   selector: 'app-choose-file',
   templateUrl: './choose-file.component.html',
@@ -18,41 +18,43 @@ export class ChooseFileComponent implements OnInit {
     region: 'us-east-2'
 	};
 	presignedPUTURL :any;
+  ObjectsArr:any=[];
 	
-   params = { 
-    Bucket: 'test098',
-    Delimiter: '/'
-   
-   }
-   Objects:any=[
-     'Object1',
-     'Object2',
-     'Object3',
-     'Object4'
-   ]
+ bucketParams = {
+    Bucket : 'test098',
+  };
+   Objects:any=[ ]
   ObjectSelected: any;
   presignedGETURL: any;
+  len!:number;
+  preview:any;
+  success!:boolean;
 
    
 
 	// Inject service
 	constructor(private fileUploadService: FileUploaderService) {
 		this.s3 = new AWS.S3(this.credentials);
+    this.s3.listObjects(this.bucketParams, (err:any, data:any) => {
+      if (err) {
+        console.log("Error", err);
+      } else {
+        console.log("Success",data);
+        this.len=data.Contents.length;
+        for (let i = 0; i < this.len; i++) {
+          this.ObjectsArr[i]=data.Contents[i].Key;
+        }
+        
+      }
+    });
+    console.log(this.ObjectsArr);
 
-   
 	 }
    
-
-  listObjects(){
-  this.s3.listObjects(this.params, function (err: any, data: any) {
-      if(err)throw err;
-    console.log(data);
-      });
-  }
-
 	ngOnInit(): void {
 		AWS.config.update({credentials: this.credentials});
-    //this.listObjects();
+   this.preview=false;
+   this.success=false;
 	}
 
 	// On file Select
@@ -67,13 +69,18 @@ export class ChooseFileComponent implements OnInit {
 		this.presignedPUTURL = this.s3.getSignedUrl('putObject', {
 			Bucket: 'test098',
 			Key: this.file.name, //filename
-			Expires: 100 //time to expire in seconds
+			Expires: 180 //time to expire in seconds
 		});
 
 
     console.log(this.presignedPUTURL);
 		this.fileUploadService.upload(this.file,this.presignedPUTURL).subscribe(data=>{
     console.log(data);
+    if(data===null){
+    this.loading=false;
+    this.success=true;
+    }
+
     }
     );
     
@@ -90,11 +97,11 @@ export class ChooseFileComponent implements OnInit {
   {
   this.presignedGETURL = this.s3.getSignedUrl('getObject', {
       Bucket: 'test098',
-      Key: 'abc.txt', //filename
-      Expires: 1000//time to expire in seconds
+      Key: this.ObjectSelected, //filename
+      Expires: 180//time to expire in seconds
   });
   console.log(this.presignedGETURL);
-
+this.preview=true;
   }
 	
  

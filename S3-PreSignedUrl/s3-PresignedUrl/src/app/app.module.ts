@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import {HttpClientModule} from'@angular/common/http';
 import { ChooseFileComponent } from './choose-file/choose-file.component';
 import { NgxDocViewerModule } from 'ngx-doc-viewer';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 // import entire SDK
 
 
@@ -12,6 +14,8 @@ import { NgxDocViewerModule } from 'ngx-doc-viewer';
 declarations: [
 	AppComponent,
  ChooseFileComponent,
+ FooterComponent,
+ HeaderComponent,
 
 ],
 imports: [
