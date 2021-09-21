@@ -13,9 +13,9 @@ export class ChooseFileComponent implements OnInit {
 	file: any =null; // Variable to store file
 	s3:any;
 	credentials = {
-		accessKeyId: 'AKIAXYHG7V2ZRIC45MML',
-		secretAccessKey : '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',
-    region: 'us-east-2'
+		accessKeyId: 'XXXXXXXXXXXX',
+		secretAccessKey : 'YYYYYYYYYYYYYYYYY',
+    region: 'ZZZZZZZZZZZZ'
 	};
 	presignedPUTURL :any;
   ObjectsArr:any=[];
